@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}List contestan{% endblock %}
+
+{% block content %}
+    <div class="card-body star-form">
+
+        <h1 class="title-form">Contestan</h1>
+
+        <table class="table table-striped dataTable no-footer">
+            <thead class="tableThead">
+            <tr role="row">
+                <th rowspan="2" class="centrar_text" tabindex="0" aria-controls="bootstrap-data-table" colspan="1">
+                    Last name
+                </th>
+                <th rowspan="2" class="centrar_text" tabindex="0" aria-controls="bootstrap-data-table" colspan="1">
+                    Character
+                </th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            {% for p in object_list %}
+                <tr>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        {{ p.last_name }}</td>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        {{ p.character }}</td>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        <a href={% url 'delete_contestan' pk=p.pk %}>
+                            <i class="fa fa-trash" aria-hidden="true"></a></td>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        <a href={% url 'update_contestan' pk=p.pk %}>
+                            <i class="fa fa-pencil" aria-hidden="true"></a></td>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        <a href={% url 'update_character' pk=p.pk %}>
+                            <i class="fa fa-user" aria-hidden="true"></a></td>
+                </tr>
+            {% empty %}
+                <p>No contestan yet</p>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

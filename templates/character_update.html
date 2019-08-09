@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Update character{% endblock %}
+
+{% block content %}
+    <div class="card-body star-form">
+        <form action="." method="POST">
+            <h1 class="title-form">Contestan -- {{ contestan.first_name }} {{ contestan.last_name }}</h1>
+            <div class="form-group">
+                <h2>Current character -- {{ contestan.character }}</h2>
+                {% csrf_token %}
+                <div class="input-group">
+                    <select name="character" id="characters_select" class="form-control"></select>
+                </div>
+            </div>
+            <input type="hidden" name="contestan" value={{ contestan.id }}>
+            <button class="btn btn-form" type="submit">Update</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: '/ajax/get_characters/',
+                dataType: 'json',
+                success: function (data) {
+                    jQuery("#characters_select").empty()
+                    for (var i = 0; i < data.characters.length; i++) {
+                        jQuery("#characters_select").append('<option value="' + data.characters_ids[i] + '#' + data.characters[i] + '">' + data.characters[i] + '</option>');
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

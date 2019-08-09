@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Star Casting{% endblock %}
+
+{% block content %}
+<div class="card-body title-home">
+    <img id="profile-img" class="img-logo" src="{% static 'img/logo.png' %}" />
+    <h1 class="title-user">Welcome {{ user }}</h1>
+</div>
+<div class="card-body menu">
+    <a class="title-menu" href={% url 'add_contestan' %}>Add actor</a>
+    <a class="title-menu" href={% url 'list_contestan' %}>See the list of actors</a>
+    <a class="title-menu" href={% url 'list_character' %}>See the list of characters</a>
+</div>
+{% endblock %}

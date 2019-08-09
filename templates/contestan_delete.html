@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete contestan{% endblock %}
+
+{% block content %}
+    <div class="card-body star-form">
+        <form action="." method="POST">
+            {% csrf_token %}
+            <section class="text-star">
+                <h2>Episode XI</h2>
+                <h1>THE DELETION APPEARS </h1>
+                <p>Are you sure you want to delete "{{ object }}", also delete his character {{ object.character }}?</p>
+                <p>But dear friend, remember these words ... </p>
+                <p>Fear is the path to the dark side. Fear leads to anger. Anger leads to hate. Hate leads to
+                    suffering.</p>
+            </section>
+            <input type="hidden" name="contestan" value={{ object.id }}>
+            <button class="btn btn-form" type="submit">Confirm</button>
+        </form>
+    </div>
+{% endblock %}

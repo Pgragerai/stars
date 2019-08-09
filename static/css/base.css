@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
+
+body {
+    background: #000000;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.title-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-logo {
+    width: 20vw;
+    height: 20vw;
+}
+
+.title-user {
+    font-family: "News Cycle", sans-serif;
+    color: #4bd5ee;
+    font-weight: 400;
+    letter-spacing: .1em;
+}
+
+.title-menu {
+    font-family: "News Cycle", sans-serif;
+    font-weight: 700;
+    color: #ff6;
+    text-align: justify;
+    letter-spacing: .1em;
+    line-height: 1.1em;
+    padding: .75vw;
+}
+
+.title-menu:hover {
+    color: #ff6;
+}
+
+.title-form {
+    font-family: "News Cycle", sans-serif;
+    font-size: 2rem;
+    color: #4bd5ee;
+    font-weight: 400;
+    letter-spacing: .1em;
+}
+
+.form-group > h2 {
+    font-size: 1rem;
+    font-family: "News Cycle", sans-serif;
+    font-weight: 700;
+    color: #ff6;
+    text-align: justify;
+    letter-spacing: .1em;
+    line-height: 1.1em;
+}
+
+.star-form {
+    width: 60vw;
+}
+
+@media only screen and (max-width: 425px) {
+    .star-form {
+        width: auto;
+    }
+}
+
+.btn-form {
+    width: 100%;
+    font-family: "News Cycle", sans-serif;
+    background: #4bd5ee;
+    color: black;
+    font-weight: 700;
+}
+
+.btn-form:hover {
+    background: #ff6;
+}
+
+table {
+    background: #ffffff !important;
+}
+
+thead {
+    background: #4bd5ee;
+}
+
+tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+td > a > i {
+    color: #000000;
+}
+
+section {
+    color: #ff6;
+}
+
+.text-star {
+    text-align: center;
+    margin-left: 2vw;
+    z-index: 1;
+    margin-top: 6vh;
+    transform-origin: 50%;
+    transform: perspective(300px) rotateX(20deg);
+}

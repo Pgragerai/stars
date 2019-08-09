@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Update contestan{% endblock %}
+
+{% block content %}
+    <div class="card-body star-form">
+        <form action="." method="POST">
+            <h3 class="title-form">Update contestan</h3>
+            {% csrf_token %}
+            <div class="form-group">
+                <h2>{{ form.first_name.label }}</h2>
+                <div class="input-group">
+                    {{ form.first_name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>{{ form.last_name.label }}</h2>
+                <div class="input-group">
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>{{ form.date.label }}</h2>
+                <div class="input-group">
+                    {{ form.date }}
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>{{ form.phone.label }}</h2>
+                <div class="input-group">
+                    {{ form.phone }}
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>{{ form.country.label }}</h2>
+                <div class="input-group">
+                    {{ form.country }}
+                </div>
+            </div>
+            <div class="form-group">
+                <h2>{{ form.email.label }}</h2>
+                <div class="input-group">
+                    {{ form.email }}
+                </div>
+            </div>
+            <input type="hidden" name="contestan" value={{ object.id }}>
+            <button class="btn btn-form" type="submit">Update</button>
+        </form>
+    </div>
+
+    <script>
+        $(function () {
+            $("#contestan_date").datepicker();
+        });
+    </script>
+{% endblock %}

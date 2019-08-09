@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}List character{% endblock %}
+
+{% block content %}
+    <div class="card-body star-form">
+
+        <h1 class="title-form">Character</h1>
+
+        <table class="table table-striped dataTable no-footer">
+            <thead class="tableThead">
+            <tr role="row">
+                <th rowspan="2" class="centrar_text" tabindex="0" aria-controls="bootstrap-data-table" colspan="1">
+                    Id
+                </th>
+                <th rowspan="2" class="centrar_text" tabindex="0" aria-controls="bootstrap-data-table" colspan="1">
+                    Name
+                </th>
+            </tr>
+            </thead>
+            {% for p in object_list %}
+                <tr>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        {{ p.pk }}</td>
+                    <td value="{{ p.pk }}" class="table-detail">
+                        {{ p.name }}</td>
+                </tr>
+            {% empty %}
+                <p>No character yet</p>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

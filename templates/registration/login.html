@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="card-body">
+    <img id="profile-img" class="img-logo" src="{% static 'img/logo.png' %}" />
+
+    <form class="form-signin" method="post">
+
+        {% csrf_token %}
+        <div class="form-group">
+            <h2>{{ form.username.label }}</h2>
+            <div class="input-group">
+                {{ form.username }}
+            </div>
+        </div>
+        <div class="form-group">
+            <h2>{{ form.password.label }}</h2>
+            <div class="input-group">
+                {{ form.password }}
+            </div>
+        </div>
+
+
+        <button type="submit"
+        class="btn btn-form">Login</button>
+    </form>
+</div>
+{% endblock %}
